@@ -7,18 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Make a reservation</h1>
-    <table>
-        {% for item in items %}
-            <tr>
-                <td>{{ item.name}}</td>
-                {% if item.booked %}
-                <td>{{"---  Booked"}}</td>
-                {% else %}
-                <td>{{"---  Available"}}</td>
-                {% endif %}
-            </tr>
-        {% endfor %}
-    </table>
+    <h1>Reservation</h1>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form }}
+    </form>
+    
 </body>
 </html>

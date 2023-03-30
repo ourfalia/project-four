@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path
-from arabicafood.views import get_home, reserve_table
+from arabicafood.views import get_home
+from reservation.views import  reserve_table
 
 urlpatterns = [
     path('admin/', admin.site.urls),
