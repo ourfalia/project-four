@@ -19,3 +19,13 @@ def reserve_table(request):
 
     return render(request, 'reservation/reservation.html', context)
 
+
+def my_reservation(request):
+    booking = Reservation.objects.all()
+    context = {
+        'booking': booking
+        }
+    return render(request, 'reservation/my_reservation.html', context)
+
+
+    
