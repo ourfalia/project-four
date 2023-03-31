@@ -8,6 +8,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', get_home, name='get_home'),
     path('home/', get_home, name='home'),
-    path('reservation/', my_reservation, name='reservation'),
     path('reservation/', reserve_table, name='reservation'),
+    path('book/', my_reservation, name='book'),
 ]
