@@ -7,12 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Reservation</h1>
-
-    <form action="" method="POST">
-        {% csrf_token %}
-        {{ form }}
-        <button type="submit">submit</button>
-    </form>
+    <h1>You have booked a table successfuly</h1>
+    <h2>see your reservation here</h2>
+    <a href="/bookings">
+        <button>Reservations</button>
+    </a>
 </body>
 </html>

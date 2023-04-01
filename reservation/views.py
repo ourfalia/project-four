@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Reservation
 from .forms import ReserveTableForm
 from reservation.models import Reservation
@@ -15,6 +15,8 @@ def reserve_table(request):
         if reserve_form.is_valid():
             reserve_form.save()
 
+            return redirect(confirmation)
+
     context = {'form': reserve_form}
 
     return render(request, 'reservation/reservation.html', context)
@@ -27,5 +29,8 @@ def my_reservation(request):
         }
     return render(request, 'reservation/my_reservation.html', context)
 
+
+def confirmation(request):
+    return render(request, 'reservation/confirmation.html')
 
     
