@@ -47,6 +47,7 @@ def edit_item(request, item_id):
     context = {'form': reserve_form}
     return render(request, 'reservation/edit_item.html', context)
 
+
 def cancel_item(request, item_id):
     item = get_object_or_404(Reservation, id=item_id)
     item.delete()
