@@ -8,6 +8,22 @@
 </head>
 <body>
     <header>
+      <div>
+        <ul>
+            {% if user.is_authenticated %}
+            <li>
+                <a href="{% url 'account_logout' %}">Logout</a>
+            </li>
+            {% else %}
+            <li>
+                <a href="{% url 'account_signup' %}">Register</a>
+            </li>
+            <li>
+                <a href="{% url 'account_login' %}">Login</a>
+            </li>
+            {% endif %}
+
+        </ul>
         <div class="row no-gutters">
             <a href="/home" class="col-md-4 logo">
             </a>

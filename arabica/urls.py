@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from arabicafood.views import get_home
 from reservation import views
 
@@ -14,4 +14,5 @@ urlpatterns = [
     path('edit/<item_id>', views.edit_item, name='edit'),
     path('cancel/<item_id>', views.cancel_item, name='cancel'),
     path('cancelation/', views.cancelation, name='cancelation'),
+    path('accounts/', include('allauth.urls')),
 ]
