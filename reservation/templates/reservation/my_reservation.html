@@ -9,15 +9,24 @@
 <body>
     <h1>my reservation</h1>
     <table>
-        {% for item in booking %}
         <tr>
-            <td>{{ item.name }}</td>
-            <td>{{ item.email }}</td>
-            <td>{{ item.phone }}</td>
-            <td>{{ item.number_of_persons }}</td>
-            <td>{{ item.date }}</td>
-            <td>{{ item.time }}</td>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Number Of People</th>
+            <th>Date</th>
+            <th>Time</th>
         </tr>
+
+        {% for item in booking %} 
+            <tr>
+                <td>{{ item.name }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.phone }}</td>
+                <td>{{ item.number_of_persons }}</td>
+                <td>{{ item.date }}</td>
+                <td>{{ item.time }}</td>
+            </tr>
         {% endfor %}
     </table>
     
