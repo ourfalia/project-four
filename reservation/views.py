@@ -16,7 +16,6 @@ def reserve_table(request):
             reserve_form.save()
 
             return redirect(confirmation)
-    
     reserve_form = ReserveTableForm()
     context = {'form': reserve_form}
 
@@ -43,11 +42,16 @@ def edit_item(request, item_id):
         if reserve_form.is_valid():
             reserve_form.save()
 
-            return redirect(confirmation)
+            return redirect('confirmation')
     reserve_form = ReserveTableForm(instance=item)
     context = {'form': reserve_form}
     return render(request, 'reservation/edit_item.html', context)
 
+def cancel_item(request, item_id):
+    item = get_object_or_404(Reservation, id=item_id)
+    item.delete()
+    return redirect('cancelation')
 
 
-    
+def cancelation(request):
+    return render(request, 'reservation/cancelation.html')
