@@ -1,1 +1,1 @@
-web: gunicorn arabica.wsgi
+web: gunicorn arabicafood.wsgi
