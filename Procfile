@@ -1,1 +1,1 @@
-web: gunicorn project-four.wsgi
+web: gunicorn arabica.wsgi
